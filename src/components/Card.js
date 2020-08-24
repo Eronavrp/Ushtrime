@@ -1,23 +1,16 @@
 import React from 'react';
 import './Card.css';
 
-const card = (props) => {
-    
-    const style={
-        width:'270px',
-        padding:'15px 20px',
-        margin:'10px auto',
-        border:'2px solid #158467',
-    };
+const card = ({votes,name,clicked}) => {
     return(
-        <div style={style}>
+        <div className="card">
             <div className="votes">
-                {props.votes}
+                {votes}
             </div>
             <div className="lang">
-                {props.name}
+                {name}
             </div>
-            <button onClick={props.clicked}>Click here</button>
+            <button onClick={clicked}>Click here</button>
         </div>
      );
 };
