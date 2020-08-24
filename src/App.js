@@ -13,18 +13,18 @@ class App extends Component {
   };
 
   voteHandler = ( index ) => {
-    const votat = [...this.state.languages];
-    votat[index].votes++;
+    const votes = [...this.state.languages];
+    votes[index].votes++;
     this.setState({
-      languages:votat
+      languages:votes
     })
   }
 
   render () {
-    const votes= this.state.languages.map((l,index) =>{
+    const votes= this.state.languages.map(({name,votes},index) =>{
       return <Card 
-              votes={l.votes} 
-              name={l.name} 
+              votes={votes} 
+              name={name} 
               key={index}
               clicked={ () => this.voteHandler(index)}/>
     })
